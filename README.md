@@ -6,4 +6,3 @@
 - 홍규현
 - 정채원
 
-![Uploading KakaoTalk_20260911_114859049.png…]()
