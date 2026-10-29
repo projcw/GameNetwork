@@ -47,7 +47,6 @@ namespace BattleArena
             byte[] header = new byte[4];
 
             // 먼저 헤더 4바이트를 읽어 본문 길이를 알아냅니다.
-            // Receive는 블로킹 함수라서 Task.Run으로 감싸 비동기화했습니다.
             if (!await ReadAsync(socket, header, 4))
                 return null; // 상대가 연결을 닫음
 
