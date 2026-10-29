@@ -105,7 +105,10 @@ namespace BattleArena
         // ═══════════════════════════════════════
         public void RemoveSession(int playerId)
         {
-            _sessions.TryRemove(playerId, out _);
+            if (_sessions.TryRemove(playerId, out var session))
+            {
+                Broadcast(new NoticePacket{Type = PacketType.PLAYER_OUT, Message = $"{session.Nickname}님이 퇴장했습니다."});
+            }
         }
 
         public ClientSession? FindSession(int playerId)
